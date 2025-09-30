@@ -5,6 +5,8 @@ void main() {
   print(item1.getFinalPrice());
   print(item1.getFullName());
   print(item2.getFinalPrice() + " - " +  item2.getFullName());
+  Countible item3 = Countible("Chips", "Snacks", 25, 10, 5);
+  print(item3.getFullName() + " " + item3.getFinalPrice());
 }
 
 class Item{
@@ -22,7 +24,20 @@ class Item{
                     
   String getFullName(){
     return '$category $name';
-  }
+  } 
+  
 }
+
+class Countible extends Item{
+  Countible (String name, String category, double price, double discount, this.count) : super(name, category, price, discount);
+    int count;
+    
+    String getFinalPrice(){
+      double finalPrice = price;
+      finalPrice = price * count - (price * (discount / 100.0));
+      return '$finalPrice сом';
+    }
+    
+  }
 
 

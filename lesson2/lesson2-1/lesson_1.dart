@@ -10,9 +10,9 @@ void main() {
 }
 
 class User {
-  String _firstName;
-  String _lastName;
-  int _exp;
+  late String _firstName;
+  late String _lastName;
+  late int _exp;
   
   set firstName(String firstName) => _firstName = firstName;
   set lastName(String lastName) => _lastName = lastName;
